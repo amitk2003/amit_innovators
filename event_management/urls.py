@@ -16,17 +16,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
-
+from django.urls import path
+from . import views
 from .views import dashboard, login_page, logut_page
 from . import settings
+from .views import about_us_view
 
 urlpatterns = [
+
     path('admin/', admin.site.urls),
     path('', dashboard, name='dashboard'),
     path('login/', login_page, name='login'),
     path('logout/', logut_page, name='logout'),
-    path('events/', include('events.urls')),
+     path('events/', include('events.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('events/user-mark/contact_us.html', views.contact_us_view, name='contact-us'),
+     path('events/about_us.html', about_us_view, name='about-us'),
+     
+    path('USER/',include('USERS.urls'))
+    
+     
 ]
 
 urlpatterns += staticfiles_urlpatterns()

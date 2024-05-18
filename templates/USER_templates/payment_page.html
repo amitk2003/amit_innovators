@@ -1,0 +1,7 @@
+<h2>Payment for {{ event.event_category }}</h2>
+<!-- Payment form goes here -->
+<form method="post">
+    {% csrf_token %}
+    <!-- Payment details fields -->
+    <button type="submit">Pay Now</button>
+</form>

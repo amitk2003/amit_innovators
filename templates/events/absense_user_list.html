@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
-{% block title %}Absense User List{% endblock title %}
-{% block breadcrumb %}Absense User List{% endblock breadcrumb %}
+{% block title %}Absent User List{% endblock title %}
+{% block breadcrumb %}Absent User List{% endblock breadcrumb %}
 
 {% block content %}
     <div class="row">
@@ -9,10 +9,10 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-10">
-                            <h5>Liste d'absence</h5>
+                            <h5>list of absent members</h5>
                         </div>
                         <div class="col-md-2">
-                            <a class="btn btn-success" href="{% url 'event-create' %}">Créer événement</a>
+                            <a class="btn btn-success" href="{% url 'event-create' %}">Create event</a>
                         </div>
                     </div>
                 </div>
@@ -21,18 +21,18 @@
                         <thead>                  
                           <tr>
                             <th style="width: 10px">#</th>
-                            <th>Utilisateur</th>
-                            <th>Evénement</th>
+                            <th>user</th>
+                            <th>Event</th>
                             <th>Status</th>
                           </tr>
                         </thead>
                         <tbody>
-                            {% for absenseuser in absenseuser %}
+                            {% for absentuser in absentuser %}
                                 <tr role="row">
                                     <td>{{ forloop.counter }}</td>
-                                    <td>{{ absenseuser.user }}</td>
-                                    <td>{{ absenseuser.event }}</td>
-                                    <td>{{ absenseuser.status }}</td>
+                                    <td>{{ absentuser.user }}</td>
+                                    <td>{{ absentuser.event }}</td>
+                                    <td>{{ absentuser.status }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>

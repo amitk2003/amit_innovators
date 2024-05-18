@@ -32,12 +32,21 @@ def login_page(request):
             user = authenticate(username=username, password=password)
             if user:
                 login(request, user)
-                return redirect('dashboard')
+                if user.is_superuser:
+                 return redirect('dashboard')
+                
     context = {
         'form': forms
     }
+
+    
+
     return render(request, 'login.html', context)
 
 def logut_page(request):
     logout(request)
     return redirect('login')
+def contact_us_view(request):
+  return render(request,  'contact_us.html')
+def about_us_view(request):
+    return render(request, 'about_us.html')

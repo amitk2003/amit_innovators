@@ -1,0 +1,92 @@
+
+
+{% extends 'USER_templates/enduser_dash.html' %}
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="container mt-5">
+  <h2>Signup</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+</div>
+{% endblock %}
+
+  
+  <style>
+    /* Custom CSS styles */
+    .jumbotron {
+      background-image: url('background.jpg'); /* Replace 'background.jpg' with your background image */
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+      margin-bottom: 0;
+    }
+    .features {
+      padding: 50px 0;
+    }
+    .feature {
+      text-align: center;
+    }
+    .feature i {
+      font-size: 50px;
+      color: #007bff;
+    }
+    .feature h3 {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to Our Event Management App</h1>
+      <p class="lead">Effortlessly plan, manage, and execute your events with ease.</p>
+      <a href="#features" class="btn btn-primary btn-lg">Learn More</a>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div id="features" class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Event Scheduling</h3>
+            <p>Efficiently schedule your events and keep track of important dates.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature">
+            <i class="fas fa-users"></i>
+            <h3>Attendee Management</h3>
+            <p>Manage your event attendees easily and efficiently.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature">
+            <i class="fas fa-cogs"></i>
+            <h3>Customizable</h3>
+            <p>Customize your event details and preferences according to your needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p>&copy; 2024 Your Event Management App</p>
+    </div>
+  </footer>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

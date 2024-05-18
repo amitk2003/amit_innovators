@@ -6,8 +6,8 @@
 
 {% block extrahead %}
     <!-- Mapbox Configuration -->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -56,9 +56,11 @@
     
     <script>
         mapboxgl.accessToken = 'pk.eyJ1Ijoic2FqaWIxMDY2IiwiYSI6ImNrYnJqb2x6NDAyN2cyc3BuenoxemNjdmEifQ.uWDYuTOqXB9KMPBmeDxORw';
-        var map = new mapboxgl.Map({
+    var map = new mapboxgl.Map({
         container: 'location-field-map',
-        style: 'mapbox://styles/mapbox/streets-v11'
-        });
+        style: 'mapbox://styles/mapbox/light-v10', // Use a global style
+        center: [0, 0], // Center the map at the prime meridian and equator
+        zoom: 1 // Set an initial zoom level
+    });
     </script>
 {% endblock content %}
