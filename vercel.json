@@ -1,6 +1,5 @@
 {
-    "version": 2,
-    "name": "amit_innovators",
+ 
     "builds": [
       {
         "src": "amit_innovators/wsgi.py",
