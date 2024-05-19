@@ -3,16 +3,10 @@
     "name": "amit_innovators",
     "builds": [
       {
-        "src": "event_management/wsgi.py",
+        "src": "manage.py",
         "use": "@vercel/python",
-        "config":{"maxLambdaSize" : "65mb" , "runtime":"python3.12.3"}
-      },
-      {
-        "src": "build_files.sh",
-        "use": "@vercel/python",
-        "config":{
-            "distDir":"staticfiles_build"
-        }
+        "config":{"maxLambdaSize" : "15mb"}
+      }
       }
     ],
     "routes": [
@@ -22,7 +16,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "event_management/wsgi.py"
+        "dest": "/wsgi.py"
       }
     ],
     "env": {
