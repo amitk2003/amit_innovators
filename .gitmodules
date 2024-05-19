@@ -1,3 +1,6 @@
 [submodule "am123-09qw"]
 	path = am123-09qw
 	url = https://github.com/amitk2003/am123-09qw.git
+[submodule "amit_innovators"]
+	path = amit_innovators
+	url = https://github.com/amit_innovators.git
