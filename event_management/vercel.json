@@ -23,7 +23,7 @@
     "env": {
       "DJANGO_SETTINGS_MODULE": "amit_innovators.settings",
       "SECRET_KEY": "gvv(&d^k0f5^xgqa+#ct4sxcg5%&5q&k2d(!uek5m+qj#b^0#2",
-      "DEBUG": "true",
+      "DEBUG": "false",
       "ALLOWED_HOSTS": ".vercel.app"
     },
     "build": {
@@ -33,6 +33,11 @@
         "PIPENV_HIDE_EMOJIS": "true",
         "PIPENV_COLORBLIND": "1"
       }
-    }
+    },
+    "commands": [
+      "pip install -r requirements.txt",    # Install dependencies
+      "python manage.py collectstatic --noinput",    # Collect static files
+      "python manage.py migrate"    # Apply database migrations
+    ]
   }
   
