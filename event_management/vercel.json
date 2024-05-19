@@ -1,0 +1,43 @@
+{
+    "version": 2,
+    "name": "amit_innovators",
+    "builds": [
+      {
+        "src": "event_management/wsgi.py",
+        "use": "@vercel/python",
+        "config":{"maxLambdaSize" : "65mb" , "runtime":"python3.12.3"}
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/python",
+        "config":{
+            "distDir":"staticfiles_build"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "event_management/wsgi.py"
+      }
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "amit_innovators.settings",
+      "SECRET_KEY": "gvv(&d^k0f5^xgqa+#ct4sxcg5%&5q&k2d(!uek5m+qj#b^0#2",
+      "DEBUG": "true",
+      "ALLOWED_HOSTS": ".vercel.app"
+    },
+    "build": {
+      "env": {
+        "PYTHONUNBUFFERED": "1",
+        "PIP_NO_CACHE_DIR": "off",
+        "PIPENV_HIDE_EMOJIS": "true",
+        "PIPENV_COLORBLIND": "1"
+      }
+    }
+  }
+  
